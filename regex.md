@@ -10,10 +10,10 @@
 Biểu thức chính quy (_Regular Expression_ hay _regex_) là một dãy liên tiếp các
 ký tự định nghĩa một _mẫu tìm kiếm_.
 
-### HDSD
+### Hướng dẫn
 
-Trong C++ 11 trở lên, STD có sẵn thư viện `<regex>` để hỗ trợ việc sử dụng biểu
-thức chính quy. Sau đây là một chưong trình cơ bản tìm kiếm trong xâu bằng biểu
+Trong C++ 11 trở lên, STL có sẵn thư viện `<regex>` để hỗ trợ việc sử dụng biểu
+thức chính quy. Sau đây là một chương trình cơ bản tìm kiếm trong xâu bằng biểu
 thức chính quy:
 
 ```cpp
@@ -118,8 +118,8 @@ Xem thêm các hàm và thuật toán trong thư viện `<regex>` tại
 [https://en.cppreference.com/w/cpp/regex](https://en.cppreference.com/w/cpp/regex).
 
 Regex chiếm ưu thế ở khả năng tìm kiếm chuyên sâu và thông minh, đăc biệt với
-nhưng khuân phức tạp. Tuy nhiên, regex rất khó đọc và viết, dẫn đến việc khó
-sửa code. Trong một số trường hợp, khi bạn không tối ưu biểu thức, regex có
+nhưng khuôn phức tạp. Tuy nhiên, regex rất khó đọc và viết, dẫn đến việc khó
+sửa và gỡ lỗi code. Trong một số trường hợp, khi bạn không tối ưu biểu thức, regex có
 thể ảnh hưởng rất nhiều tới hiệu năng và làm chậm chuơng trình.
 
 Sau cùng, regex chưa phải là cách tìm kiếm xâu nhanh nhất, ta chỉ nên sử dụng
