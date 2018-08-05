@@ -44,3 +44,25 @@ Xem implementation đầy đủ trên GitHub: [https://github.com/dungwinux/stri
 Như code ở trên, dòng 4, 10, 13 cần O(_m_). Tuy nhiên, dòng hai chỉ chạy một
 lần, và dòng 6 chỉ chạy khi giá trị hash bằng nhau, thường chỉ chạy vài lần.
 Giờ chúng ta cần quan tâm tới hàm hash.
+
+Cách tích hợp hàm hash đơn giản nhất trong Rabin-Karp là
+```cpp
+int Hash(std::string str)
+{
+    /* Hằng số */
+    int cnst = 256;
+    /* Modulo */
+    int mod = 1e9 + 7;
+    /* Biến lưu kết quả */
+    int sum = 0;
+    
+    // Lặp từ cuối tới đầu xâu
+    for (auto iter = str.rbegin(); iter != str.rend(); ++iter)
+        sum = (sum * cnst + str) % mod;
+    return sum;
+}
+```
+
+Tuy nhiên, sử dụng phương thức trên đây sẽ ăn may 50-50 vì nó phần lớn phụ
+thuộc vào biến `cnst` và `mod` mà chúng ta chọn bởi nó có khả năng dẫn đến Hash
+Collision, tức hai dữ liệu khác nhau nhưng có cùng một hash.
