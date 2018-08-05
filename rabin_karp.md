@@ -66,3 +66,6 @@ int Hash(std::string str)
 Tuy nhiên, sử dụng phương thức trên đây sẽ ăn may 50-50 vì nó phần lớn phụ
 thuộc vào biến `cnst` và `mod` mà chúng ta chọn bởi nó có khả năng dẫn đến Hash
 Collision, tức hai dữ liệu khác nhau nhưng có cùng một hash.
+Điều này đi ngược với định nghĩa, nên thuật toán này có một hàm hash được tối ưu
+riêng, gọi là Rabin fingerprint. Rabin fingerprint về cơ bản khá giống hàm hash 
+trên, nhưng có một chút thay đổi.
