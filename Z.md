@@ -13,7 +13,7 @@ Trước hết, để hiểu thuật toán này, ta sẽ làm quen với mảng 
 ## Mảng Z
 ### Khái niệm
 
-Mảng `Z` của một xâu `Str` là mảng có cùng độ dài với xâu, với `Z[i]` là độ dài xâu con dài nhất của `Str` bắt đầu tại `i`, và cũng là tiền tố của `Str`.
+Mảng `Z` của một xâu `str` là mảng có cùng độ dài với xâu, với `Z[i]` là độ dài xâu con dài nhất của `str` bắt đầu tại `i`, và cũng là tiền tố của `str`.
 
 Lưu ý là ta không xét `Z[0]` vì toàn bộ một xâu cũng chính là tiền tố của nó.
 
@@ -21,7 +21,7 @@ Ví dụ:
 ```
 Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
 
- Str:   " a  a  b  c  a  a  b  x  a  a  a  z"
+ str:   " a  a  b  c  a  a  b  x  a  a  a  z"
   
   Z:    " X  1  0  0  3  1  0  0  2  2  1  0"
   
@@ -46,7 +46,7 @@ Từ đó ta có thể chạy biến i từ đầu đến cuối xâu như sau:
    rồi lấy Z[i] là độ dài khoảng [l,r] hay Z[i] = r-l+1.
    
 2. Nếu (i < r) => i nằm trong khoảng [l,r] (l luôn <= i), ta gọi
-   k = i-l, hay k là vị trí của i trong xâu tiền tố [l,r]. Từ đó ta biết rằng
+   k = i-l, hay k là vị trí của i trong xâu tiền tố str(l..r). Từ đó ta biết rằng
    str(k..r-l) = str(i..r) nên ta bỏ qua tính đoạn này bằng cách dùng Z[k]
    như sau:
    
@@ -54,9 +54,9 @@ Từ đó ta có thể chạy biến i từ đầu đến cuối xâu như sau:
       ta cho Z[i] = Z[k] luôn và không thay đổi l, r.
       
    2. Nếu Z[k] >= r-i+1, ta biết s(i..r) khớp với tiền tố,
-      nhưng không biết đằng sau r, nên ta đặt l=i, rồi từ
-      đó ta tính r lớn nhất thỏa mãn, xong lấy Z[i] = r-l+1
-      như bình thường
+      nhưng không biết đằng sau r, nên ta đặt l = i, rồi
+      từ đó ta tính r như trên, bỏ qua đoạn từ i đến r,
+	  xong lấy Z[i] = r-l+1 như bình thường
 ```
 
 Code mẫu:
@@ -130,7 +130,7 @@ Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
  
   Z:    " X  1  0  0  1  0  1  0  3  1  0  0 "
 ```
-Nhận xét: vì có kí tự `$`, nên giá trị các phần tử của `Z` sẽ không vượt quá `m`, vì ta chắc chắn không có giá trị nào giống `$`, nên sẽ không có xâu con nào có độ dài lớn hơn `m` và cũng là tiền tố của `S` ngoài chính tiền tố của nó, hay `Z[0]` mà ta không xét đến. Vì vậy nên tiền tố lớn nhất có thể chính là xâu `P`.
+Nhận xét: Giá trị các phần tử của `Z` sẽ không vượt quá `m`, vì ta chắc chắn không có giá trị nào giống `$`, nên sẽ không có xâu con nào có độ dài lớn hơn `m` và cũng là tiền tố của `S`, và xâu con lớn nhất thỏa mãn sẽ chính là xâu `P`.
 
 Từ đây ta dễ dàng thấy được, các giá trị `Z[i]` có giá trị bằng `m` chứng tỏ xuất hiện xâu `P` tại vị trí `i`, và từ đó có thể tính được các vị trí xuất hiện của xâu `P` trong xâu `T`.
 
