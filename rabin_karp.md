@@ -18,9 +18,17 @@ O(_n + m_), còn trường hợp xấu nhất là O(_nm_).
 
 [https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp](https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp)
 
-Như code ở trên, dòng 4, 10, 13 cần O(_m_). Tuy nhiên, dòng hai chỉ chạy một
-lần, và dòng 6 chỉ chạy khi giá trị hash bằng nhau, thường chỉ chạy vài lần.
-Giờ chúng ta cần quan tâm tới hàm hash.
-
+Trên lý thuyết, thuật toán Rabin-Karp sẽ hash xâu cần tìm (pattern), rồi hash
+từng đoạn một trong xâu hướng đến (target) để so sánh với hash của pattern. 
 Để có thể tối ưu cho Rabin-Karp, chúng ta sử dụng Rolling Hash, cho phép
-chúng ta hash toàn bộ đoạn con của xâu trong O(_n_)
+chúng ta hash toàn bộ đoạn con của xâu trong O(_n_).
+
+Pros: 
+- So sánh số với số, nhanh hơn khi so xâu với xâu.
+- Có thể cải tiến để tìm nhiều xâu cùng một lúc.
+
+Cons:
+- Rabin-Karp thiên về random, đòi hỏi người dùng phải có chút common sense để
+optimize thuật toán.
+- Tuy độ phức tạp thấp nhưng Rabin-Karp vẫn chưa phải là thuật nhanh nhất
+(Booyer-Moore, KMP, ...)
