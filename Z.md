@@ -30,8 +30,6 @@ Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
 
 ### Cách lập
 
-Vậy lập mảng `Z` như thế nào?
-
 Ta có thể lập mảng `Z` với thời gian tuyến tính như sau:
 
 ```
@@ -115,11 +113,11 @@ Ta sẽ lập một xâu khác, giả sử là `s`, và đặt `s=P$T`, với `P
 
 Ví dụ:
 ```
-P="aab", m=3
+P = "aab", m = 3
 
-T="ababaabb", n=8
+T = "ababaabb", n = 8
 
-=> S="aab$ababaabb"
+=> S = "aab$ababaabb"
 ```
 
 Giờ xét mảng `Z` của xâu `S` ở trên:
@@ -130,7 +128,7 @@ Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
  
   Z:    " X  1  0  0  1  0  1  0  3  1  0  0 "
 ```
-Nhận xét: Giá trị các phần tử của `Z` sẽ không vượt quá `m`, vì ta chắc chắn không có giá trị nào giống `$`, nên sẽ không có xâu con nào có độ dài lớn hơn `m` và cũng là tiền tố của `S`, và xâu con lớn nhất thỏa mãn sẽ chính là xâu `P`.
+Nhận xét: Giá trị các phần tử của `Z` sẽ không vượt quá `m`, vì ta chắc chắn không có giá trị nào giống `$`, nên sẽ không có xâu con nào có độ dài lớn hơn `m` và cũng là tiền tố của `S`.
 
 Từ đây ta dễ dàng thấy được, các giá trị `Z[i]` có giá trị bằng `m` chứng tỏ xuất hiện xâu `P` tại vị trí `i`, và từ đó có thể tính được các vị trí xuất hiện của xâu `P` trong xâu `T`.
 
