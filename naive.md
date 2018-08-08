@@ -44,10 +44,10 @@ int main()
 
 #### Tại sao phương pháp này lại đúng?
 
-Rất đơn giản, bởi lẽ 2 string khớp nhau luôn có cùng độ dài. Điều đó dẫn đến
-việc so sánh toàn bộ các chuỗi con có thể có trong văn bản với độ dài đó.
-Gọi độ dài văn bản (có thể chứa mẫu) là n, độ dài mẫu là m. Dễ dàng thấy được có
-n - m + 1 chuỗi con với độ dài là m → so sánh n - m + 1 chuỗi con.
+Rất đơn giản, bởi lẽ 2 xâu khớp nhau luôn có cùng độ dài. Điều đó dẫn đến việc
+so sánh toàn bộ các chuỗi con có thể có trong văn bản với độ dài đó. Gọi độ dài
+văn bản (có thể chứa mẫu) là `n`, độ dài mẫu là `m`. Ta dễ dàng thấy được có 
+_n - m + 1_ chuỗi con với độ dài là `m` -> so sánh _n - m + 1_ chuỗi con.
 
 Phương pháp này có độ phức tạp tính toán là O(_(n - m + 1) * m_), vốn không tối
 ưu, đặc biệt khi nhiều phép so sánh là không cần thiết.
@@ -59,5 +59,5 @@ Pros:
 - **Cực kì** dễ hiểu, dễ cài
 
 Cons:
-- Thời gian chạy lâu: O(_mn_)
-- Vì kém hiệu quả -> không có ứng dụng
+- Thời gian chạy lâu: O(_mn_) do thực hiện nhiều bước không cần thiết
+- Kém hiệu quả -> không có ứng dụng
