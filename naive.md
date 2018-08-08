@@ -5,11 +5,20 @@
 
 ## The Naïve Way
 
+### Định nghĩa
+
 Để bắt đầu cho String-Matching, chúng ta sẽ khởi động với phương thức cơ bản
 nhất, gọi là Naïve String Matching.
 
-Nói ngắn gọn, thuật này rất đơn giản, bạn đọc có thể gập sách lại cài thử. Nếu
-bạn quá bí, thì sau đây là code mẫu:
+Nói ngắn gọn, đây là một thuật rất đơn giản và kém hiệu quả. Nó sẽ di chuyển
+qua từng vị trí một, so sánh giữa xâu trong văn bản và xâu cần tìm.
+
+Chẳng hạn, cho `target = "qwertyuiop"`  và `pattern = "rtyui"`. Naive sẽ lấy
+xâu con từ vị trí `target[0]`, độ dài bằng độ dài `pattern`, đem so với `pattern`
+từng kí tự một. Rồi Naive lấy xâu con từ vị trí `target[1]`, độ dài bằng độ dài
+`pattern` tiếp tục đem so với `pattern` và cứ như thế cho đến cuối xâu.
+
+Bạn đọc có thể gập sách lại cài thử. Nếu bạn quá bí, thì sau đây là code mẫu:
 
 ```cpp
 #include <iostream>
@@ -31,3 +40,13 @@ int main()
     return 0;
 }
 ```
+
+#### Kết
+
+Pros:
+- Không có tiền xử lí (Preprocessing), không sử dụng bộ nhớ
+- **Cực kì** dễ hiểu, dễ cài
+
+Cons:
+- Thời gian chạy lâu: O(_mn_)
+- Vì kém hiệu quả -> không có ứng dụng
