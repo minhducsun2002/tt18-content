@@ -18,10 +18,68 @@ O(_n + m_), còn trường hợp xấu nhất là O(_nm_).
 
 [https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp](https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp)
 
-Trên lý thuyết, thuật toán Rabin-Karp sẽ hash xâu cần tìm (pattern), rồi hash
-từng đoạn một trong xâu hướng đến (target) để so sánh với hash của pattern. 
-Để có thể tối ưu cho Rabin-Karp, chúng ta sử dụng Rolling Hash, cho phép
-chúng ta hash toàn bộ đoạn con của xâu trong O(_n_).
+> Để thuận tiện, người viết sẽ sử dụng các tên biến đựoc viết trong đoạn code 
+> ở trên:
+> - `target`: Xâu văn bản, (có thể) có chứa xâu tìm kiếm
+> - `pattern`: Xâu cần tìm
+> - `n`: Độ dài xâu văn bản
+> - `m`: Độ dài xâu cần tìm
+> - `cnst = 257`: Hằng số cho trước, có thể hiểu là seed
+> - `mod = 1'000'000'007`: Giới hạn của hash
+> - `patternHash`: hash của xâu cần tìm
+> - `rollingHash`: hash của đoạn con `[i .. (i + m)]` trong xâu văn bản
+
+Khác với các thuật toán khác như KMP, Boyer-Moore chơi trò nhảy qua ký tự, Rabin-Karp "_cẩn thận_" so sánh các xâu con của _target_ với _pattern_ bằng hàm hash như sau:
+
+![Caculating Hash](/img/rkarp-1.svg)
+
+##### Code C++
+
+```cpp
+unsigned hash (const std::string &str)
+{
+    long long sum = 0;
+    for (auto &iter : str)
+    {
+        sum = sum * cnst + iter;
+        sum %= mod;
+    }
+    return sum;
+}
+```
+
+Độ phức tạp của hàm hash trên là O(_m_) với n là độ dài xâu. Chúng ta cần phải
+hash từ đầu đến cuối xâu để so sánh, vậy là mất O(_nm_). 
+
+Bây giờ, chúng ta sẽ có input vào là `target = "awesomeduc"` và `pattern = "duc"`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` | `d` | `u` | `c` |     |     |     |     |     |     |     |
+
+Trước tiên, chúng ta sẽ tiến hành hash xâu `pattern` trước, được giá trị
+`6635068`. Chuyển sang xâu `target`, chúng ta sẽ hash ba ký tự đầu (do `pattern`
+có 3 ký tự) được giá trị `6437437`. Tất nhiên, `6437437 != 6635068`.
+
+Vì giá trị hash khác nhau, nên ta có thể hiểu giá trị hai xâu khác nhau, ta có
+thể tiếp tục so sánh với hash của 3 ký tự tiếp của xâu `target`.
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     | `d` | `u` | `c` |     |     |     |     |     |     |
+
+Để có thể tối ưu cho Rabin-Karp, chúng ta sử dụng Rolling Hash, cho phép chúng
+ta hash toàn bộ đoạn con của xâu trong O(_n_). Thay vì chúng ta hash lại 2 ký tự
+đã tính hash từ trước, chúng ta có thể cộng `rollingHash` với ký tự mới thêm vào
+rồi trừ đi kí tự đầu tiên.
+
+| `target`                                     | [0] | [1] | [2] | [3] | _hash_      |
+| -------------------------------------------- | --- | --- | --- | --- | ----------- |
+| `rollingHash`                                | `a` | `w` | `e` |     | `6635068`   |
+| Thêm `s` (`rollingHash * cnst + s[3]`)       | `a` | `w` | `e` | `s` | `654421417` |
+| Bỏ `a` (`rollingHash - s[0] * pow(cnst, m)`) |     | `w` | `e` | `s` | `7885903`   |
+
+...
 
 Pros: 
 - So sánh số với số, nhanh hơn khi so xâu với xâu.
