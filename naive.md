@@ -26,7 +26,7 @@ Bạn đọc có thể gập sách lại cài thử. Nếu bạn quá bí, thì 
 
 int naive_search(std::string target, std::string pattern)
 {
-    for (int i = 0; i <= target.size() - pattern.size(); ++i)
+    for (int i = 0; i < target.size() - pattern.size(); ++i)
         if (target.substr(i, pattern.size()) == pattern)
             /* Return: Success */
             return i;
