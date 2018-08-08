@@ -5,7 +5,7 @@ http://codeforces.com/contest/126/problem/B
 
 http://acm.timus.ru/problem.aspx?space=1&num=1423&locale=en
 
-http://codeforces.com/contest/126/problem/B
+http://codeforces.com/contest/625/problem/B
 
 ## Một số đoạn code mẫu :
 https://github.com/OpenGenus/cosmos/blob/master/code/string_algorithms/src/kmp_algorithm/kmp_algorithm.cpp
