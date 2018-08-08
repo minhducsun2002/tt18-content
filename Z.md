@@ -57,7 +57,7 @@ Từ đó ta có thể chạy biến i từ đầu đến cuối xâu như sau:
 	  xong lấy Z[i] = r-l+1 như bình thường
 ```
 
-Code mẫu:
+Code tham khảo:
 ```cpp
 string str;
 vector<int> Z;
@@ -132,4 +132,71 @@ Nhận xét: Giá trị các phần tử của `Z` sẽ không vượt quá `m`,
 
 Từ đây ta dễ dàng thấy được, các giá trị `Z[i]` có giá trị bằng `m` chứng tỏ xuất hiện xâu `P` tại vị trí `i`, và từ đó có thể tính được các vị trí xuất hiện của xâu `P` trong xâu `T`.
 
+Đây là code mẫu đầy đủ của bài trên để các bạn tham khảo:
 
+```cpp
+#include <vector>
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+typedef vector<int> vi;
+
+string S, P, T;
+vi Z;
+
+void getZ() //Lập mảng Z cho S
+{
+    Z.assign(S.size(), int());
+    int l = 0, r = 0;
+    for (int i = 1; i < S.size(); i++)
+    {
+        if (i > r)
+        {
+            l = i, r = i;
+            while (S[r] == S[r - l])
+            {
+                ++r;
+            }
+            Z[i] = r - l;
+            --r;
+        }
+        else
+        {
+            int k = i - l;
+            if (Z[k] < r - i + 1)
+            {
+                Z[i] = Z[k];
+            }
+            else
+            {
+                l = i;
+                while (S[r] == S[r - l])
+                {
+                    ++r;
+                }
+                Z[i] = r - l;
+                --r;
+            }
+        }
+        if (Z[i] == P.size()) //Tại đây ta kiểm tra Z[i] và output luôn
+        {
+            cout << i - P.size() << " "; //Lưu ý vị trí
+        }
+    }
+    return;
+}
+
+void findpattern(string P, string T)
+{
+    S = P + '$' + T; //Lập S
+    getZ();
+}
+
+int main() //Nhập p và t
+{
+    cin >> P >> T;
+    findpattern(P, T);
+}
+```
