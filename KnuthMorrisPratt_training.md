@@ -14,3 +14,6 @@ https://github.com/minhducsun2002/Algorithms-Implementations/blob/master/String/
 (code của người viết)
 
 https://github.com/n2yen/KMP
+
+## Tài nguyên tham khảo :
+http://whocouldthat.be/visualizing-string-matching/
