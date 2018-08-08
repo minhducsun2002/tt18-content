@@ -14,7 +14,7 @@ trong xâu.
 Với xâu độ dài là n, và xâu con độ dài m, trường hợp trung bình và tốt nhất là
 O(_n + m_), còn trường hợp xấu nhất là O(_nm_).
 
-#### Implementation
+### Implementation
 
 [https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp](https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp)
 
@@ -118,7 +118,7 @@ Chúng ta làm tiếp tục như vậy cho đến khi đạt được vị trí 
 
 => Tìm thấy kết quả
 
-#### Kết
+### Kết
 
 Pros: 
 - Truờng hợp tốt: O(_n + m_)
@@ -134,3 +134,7 @@ mã hash
 - Tuy độ phức tạp thấp nhưng Rabin-Karp vẫn chưa phải là thuật nhanh nhất
 (còn có Boyer-Moore, KMP, ...)
 
+### Tham khảo
+1. https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
+2. http://www-igm.univ-mlv.fr/~lecroq/string/node5.html
+3. https://github.com/dungwinux/string-matching
