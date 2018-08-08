@@ -14,15 +14,19 @@ luôn luôn cho ra kết quả là một chuỗi chứa `S` (nếu không, in ra
     Ví dụ với test `#5` :
     - `aaaaaaa` là văn bản, `aaaa` là mẫu khớp.
     - Mặc dù có thể tìm thấy 4 vị trí khớp nhau, tuy nhiên do các chuỗi chồng lên nhau nên không được tính :
-      ```c
-aaaaaaa
-aaaa
--aaaa
---aaaa
----aaaa
-```
-..và vì thế đáp án cho test này chỉ là 1. Tương tự, test sau sẽ cho đáp án là 2:
-```
-aaaaaaaa
-aaaa
-```
+         ```c
+         aaaaaaa
+         aaaa
+          aaaa
+           aaaa
+            aaaa
+          
+    
+    ..và vì thế đáp án cho test này chỉ là 1. Tương tự, test sau sẽ cho đáp án là 2:
+    
+
+         ```
+         aaaaaaaa
+         aaaa
+             aaaa
+         ```
