@@ -16,7 +16,7 @@ O(_n + m_), còn trường hợp xấu nhất là O(_nm_).
 
 ### Implementation
 
-[https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp](https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp)
+Full implementation: https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp
 
 > Để thuận tiện, người viết sẽ sử dụng các tên biến đựoc viết trong đoạn code 
 > ở trên:
