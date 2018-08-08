@@ -73,20 +73,64 @@ ta hash toàn bộ đoạn con của xâu trong O(_n_). Thay vì chúng ta hash 
 đã tính hash từ trước, chúng ta có thể cộng `rollingHash` với ký tự mới thêm vào
 rồi trừ đi kí tự đầu tiên.
 
-| `target`                                     | [0] | [1] | [2] | [3] | _hash_      |
-| -------------------------------------------- | --- | --- | --- | --- | ----------- |
-| `rollingHash`                                | `a` | `w` | `e` |     | `6635068`   |
-| Thêm `s` (`rollingHash * cnst + s[3]`)       | `a` | `w` | `e` | `s` | `654421417` |
-| Bỏ `a` (`rollingHash - s[0] * pow(cnst, m)`) |     | `w` | `e` | `s` | `7885903`   |
+| `target`                                         | [0] | [1] | [2] | [3] | _hash_      |
+| ------------------------------------------------ | --- | --- | --- | --- | ----------- |
+| `rollingHash`                                    | `a` | `w` | `e` |     | `6437437`   |
+| Thêm `s` (`rollingHash * cnst + s[3]`)           | `a` | `w` | `e` | `s` | `654421417` |
+| Bỏ `a` (`rollingHash - s[0] * pow(cnst, m + 1)`) |     | `w` | `e` | `s` | `7885903`   |
 
-...
+Chúng ta làm tiếp tục như vậy cho đến khi đạt được vị trí xâu cần tìm:
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     | `d` | `u` | `c` |     |     |     |     |     |     |
+>`hash(target[1..3]) = 7885903`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     | `d` | `u` | `c` |     |     |     |     |     |
+>`hash(target[2..4]) = 6700615`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     |     | `d` | `u` | `c` |     |     |     |     |
+>`hash(target[3..5]) = 7624271`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     |     |     | `d` | `u` | `c` |     |     |     |
+>`hash(target[4..6]) = 7359553`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     |     |     |     | `d` | `u` | `c` |     |     |
+>`hash(target[5..7]) = 7225398`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     |     |     |     |     | `d` | `u` | `c` |     |
+>`hash(target[6..8]) = 6696766`
+
+| `target`  | `a` | `w` | `e` | `s` | `o` | `m` | `e` | `d` | `u` | `c` |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `pattern` |     |     |     |     |     |     |     | `d` | `u` | `c` |
+>`hash(target[7..9]) = 6635068 = patternHash`
+
+=> Tìm thấy kết quả
+
+#### Kết
 
 Pros: 
+- Truờng hợp tốt: O(_n + m_)
 - So sánh số với số, nhanh hơn khi so xâu với xâu.
 - Có thể cải tiến để tìm nhiều xâu cùng một lúc.
+- Dễ hiểu, không cần động não nhiều.
 
 Cons:
 - Rabin-Karp thiên về random, đòi hỏi người dùng phải có chút common sense để
 optimize thuật toán.
+- Có khả năng xảy ra hash collision, tức hai xâu giá trị khác nhau nhưng cùng
+mã hash
 - Tuy độ phức tạp thấp nhưng Rabin-Karp vẫn chưa phải là thuật nhanh nhất
-(Booyer-Moore, KMP, ...)
+(còn có Boyer-Moore, KMP, ...)
+
