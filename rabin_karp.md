@@ -131,6 +131,8 @@ Cons:
 optimize thuật toán.
 - Có khả năng xảy ra hash collision, tức hai xâu giá trị khác nhau nhưng cùng
 mã hash
+    > *Giải pháp*: hash collision có thể được giảm nhẹ bằng cách sử dụng nhiều 
+    > hash table cùng một lúc với các hằng số và giá trị modulo khác nhau
 - Tuy độ phức tạp thấp nhưng Rabin-Karp vẫn chưa phải là thuật nhanh nhất
 (còn có Boyer-Moore, KMP, ...)
 
@@ -141,5 +143,6 @@ mã hash
 
 ### Bài tập
 - https://codeforces.com/contest/1016/problem/B
+- https://codeforces.com/contest/271/problem/D
 
 ...
