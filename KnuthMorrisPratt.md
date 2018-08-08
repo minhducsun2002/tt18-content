@@ -7,7 +7,13 @@ Bài toán tìm kiếm (so khớp) chuỗi, hay còn gọi là bài toán needle
 chuỗi P). Nhiêm vụ đơn giản là tìm ra mọi sự xuất hiện của P trong T.
 
 Thuật toán Knuth-Morris-Pratt là một thuật toán chạy với thời gian tuyến tính
-để giải quyết bài toán này.
+để giải quyết bài toán này, được xây dựng dựa trên nhận xét rằng một mẫu khớp
+bất kỳ sẽ chứa đủ thông tin để chỉ ra vị trí cần được so sánh tiếp theo
+sau mỗi lần khớp, từ đó không so sánh lại bất kỳ ký tự nào đã được so sánh trước đó.
+
+Thuật toán được tìm ra lần đầu vào năm 1970 bởi Donald E. Knuth và học trò
+của mình là Vaughan R. Pratt. James H. Morris cũng tìm ra thuật toán này một cách độc lập
+cùng năm. Đây là thuật toán tìm kiếm chuỗi đầu tiên có thời gian thực thi tuyến tính.
 
 ---
 Ghi chú:
@@ -130,7 +136,7 @@ mẫu khớp của chúng ta dài).
 ### Thực
 Một câu hỏi đặt ra cho chúng ta là: làm thế nào để biết được số vị trí cần di chuyển?
 
-###### Đến đây người đọc nên  nhắm mắt lại, suy nghĩ, và (nếu không nghĩ được, nghĩ xong rồi, ...) đọc tiếp xuống dưới.
+###### Đến đây người đọc nên nhắm mắt lại, suy nghĩ, và (nếu không nghĩ được, nghĩ xong rồi, ...) đọc tiếp xuống dưới.
 
 Hãy để ý rằng với mỗi tiền tố của `P` (tạm ký hiệu là `P(i)`), tồn tại một giá trị `n` mà tiền tố độ dài `n`
 của `P(i)` tương đương với hậu tố độ dài `n` của chính nó.
@@ -173,10 +179,11 @@ PREFPITCHPERFECTION
 
 Từ đó ta thấy :
 Với mỗi tiền tố của `P` (ký hiệu `P(i)` với `i` là độ dài tiền tố), ta có `n` là độ dài tiền tố chuẩn nhỏ nhất
-mà bản thân tiền tố đó cũng là hậu tố chuẩn của `P(i)`. `n` càng lớn, số phép so sánh có thể bỏ qua càng cao.
+mà bản thân tiền tố đó cũng là hậu tố chuẩn của `P(i)`. `n` càng lớn, số phép so sánh
+có thể bỏ qua càng cao.
 
-(Tiền/hậu tố chuẩn là tiền/hậu tố có độ dài nhỏ hơn bản thân chuỗi đó. Chúng ta sử dụng tiền/hậu tố chuẩn 
-bởi lẽ, với tiền tố là cả xâu thì việc xử lý không còn ý nghĩa nữa.)
+(Tiền/hậu tố chuẩn là tiền/hậu tố có độ dài nhỏ hơn bản thân chuỗi đó. Chúng ta sử dụng
+tiền/hậu tố chuẩn bởi lẽ, với tiền tố là cả xâu thì việc xử lý không còn ý nghĩa nữa.)
 
 Xét ví dụ thứ ba ở trên (`T` `=` `EXTENDEXTENTEXECUTE`, `P` `=` `EXTENDEXT`).
 
@@ -257,9 +264,9 @@ Việc so khớp sau khi đã có bảng phương án, dễ thấy, có độ ph
 
 Tuy vậy, việc tính bảng phương án cũng tốn thời gian (dĩ nhiên).
 
-Một phương pháp tính bảng `N(i)` ở trên là tăng dần độ dài tiền/hậu tố và so sánh tiền/hậu tố đó liên tục
-đến khi có kết quả. Tuy nhiên, phương pháp này không khả dụng khi độ dài mẫu khớp lớn (trên `10000` chẳng
-hạn).
+Một phương pháp tính bảng `N(i)` ở trên là tăng dần độ dài tiền/hậu tố và so sánh tiền/hậu tố đó
+liên tục đến khi có kết quả. Tuy nhiên, dễ thấy phương pháp này không khả dụng khi độ dài mẫu khớp
+lớn (trên `10000` chẳng hạn) bởi độ phức tạp tiệm cận `O(n • n)` của nó.
 
 &nbsp;
 
@@ -321,8 +328,24 @@ Dễ thấy, chúng ta chỉ tính toán tại mỗi giá trị của `i` một 
 → Độ phức tạp tính toán của KMP là `O(m + n)`.
 
 ### Kết
-Thuật toán Knuth-Morris-Pratt rất được ưa chuộng trong nhiều lời giải cho các bài tập lập trình, bởi tốc độ của
-thuật toán này hiện nay chưa có một thuật toán nào có thể vượt qua. Tuy nhiên, điều làm cho KMP khó phổ biến
-là cách cài đặt của nó rất khó thuần thục : độ phức tạp có thể tăng từ `O(m + n)` lên `O(m * m + n)` nếu phương pháp
-implement không hiệu quả; bên cạnh đó, bộ nhớ `O(m)` đôi khi là quá lớn với một số hoàn cảnh, so với thuật toán 
-Rabin-Karp vốn chỉ chiếm `O(1)` bộ nhớ.
+Thuật toán Knuth-Morris-Pratt rất được ưa chuộng trong nhiều lời giải cho các bài tập lập trình,
+bởi tốc độ của thuật toán này hiện nay chưa có một thuật toán nào có thể vượt qua (về mặt trung bình).
+Tuy nhiên, điều làm cho KMP khó phổ biến là cách cài đặt của nó rất khó thuần thục : độ phức tạp
+có thể tăng từ `O(m + n)` lên `O(m • m + n)` nếu phương pháp cài đặt không hiệu quả.
+
+Ưu điểm :
+- Tốc độ thực thi không-có-đối-thủ với độ phức tạp tính toán luôn luôn ở mức `O(m + n)`
+  - Để so sánh, thuật toán Boyer-Moore có thời gian tiền xử lý `O(m + k)` (với `k` là độ lớn bảng chữ cái)
+và tốc độ thực thi tốt nhất là `Ω(n / m)`, nhưng có thể lên đến `O(m • n)` ở trường hợp tệ nhất, khi mẫu khớp
+và văn bản đều là sự lặp lại của cùng một ký tự).
+  - Thuật toán Rabin-Karp có tốc độ trung bình cũng là `O(m + n)`, tuy nhiên tồn tại trường hợp tệ nhất với độ
+phức tạp lên đến `O((n - m) • m)`
+- Yêu cầu bộ nhớ `O(m)` giống như hầu hết các thuật toán khác, do đó hầu hết bài tập sẽ có thể được giải
+với thuật toán này.
+
+Nhược điểm :
+- Khó cài đặt (và dĩ nhiên là khó gỡ lỗi) bởi phương pháp so sánh tương đối phức tạp, đặc biệt khi
+so sánh với những thuật toán khác như Z và Rabin-Karp. Bên cạnh đó, hàm tiền xử lý nếu không được tối ưu
+sẽ tiềm tàng nguy cơ chạy quá thời gian quy định.
+- Không tối ưu đối với các trường hợp cần khớp nhiều mẫu một lúc. Giải pháp lúc này là thuật toán Aho-Corasick,
+vốn là một sự mở rộng của bản thân KMP.
