@@ -10,7 +10,7 @@
 Biểu thức chính quy (_Regular Expression_ hay _regex_) là một dãy liên tiếp các
 ký tự định nghĩa một _mẫu tìm kiếm_.
 
-### Hướng dẫn
+### Cài đặt
 
 Trong C++ 11 trở lên, STL có sẵn thư viện `<regex>` để hỗ trợ việc sử dụng biểu
 thức chính quy. Sau đây là một chương trình cơ bản tìm kiếm trong xâu bằng biểu
@@ -115,12 +115,20 @@ trình `find` và `grep` nhận input là regex để tìm kiếm.
 ### Kết luận
 
 Xem thêm các hàm và thuật toán trong thư viện `<regex>` tại
-[https://en.cppreference.com/w/cpp/regex](https://en.cppreference.com/w/cpp/regex).
+https://en.cppreference.com/w/cpp/regex.
 
-Regex chiếm ưu thế ở khả năng tìm kiếm chuyên sâu và thông minh, đăc biệt với
-nhưng khuôn phức tạp. Tuy nhiên, regex rất khó đọc và viết, dẫn đến việc khó
-sửa và gỡ lỗi code. Trong một số trường hợp, khi bạn không tối ưu biểu thức, regex có
-thể ảnh hưởng rất nhiều tới hiệu năng và làm chậm chuơng trình.
+Pros:
+- Tìm kiếm chuyên sâu và thông minh, đăc biệt với những pattern phức tạp.
+- Nhiều ngôn ngữ như C++, Python, JavaScript, Crystal, ... có thư viện hỗ trợ sẵn,
+lập trình viên  chỉ việc gọi ra.
 
-Sau cùng, regex chưa phải là cách tìm kiếm xâu nhanh nhất, ta chỉ nên sử dụng
-khi thực sự cần như khi dùng wildcard chẳng hạn.
+Cons:
+- Khó đọc và viết, -> khó sửa và gỡ lỗi code.
+- Ảnh hưởng ít nhiều tới hiệu năng và làm chậm chuơng trình.
+
+### Tham khảo
+
+1. https://en.wikipedia.org/wiki/Regular_expression
+2. https://en.cppreference.com/w/cpp/regex
+3. https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+4. https://github.com/42tm/wfind
