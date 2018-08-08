@@ -138,3 +138,8 @@ mã hash
 1. https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
 2. http://www-igm.univ-mlv.fr/~lecroq/string/node5.html
 3. https://github.com/dungwinux/string-matching
+
+### Bài tập
+- https://codeforces.com/contest/1016/problem/B
+
+...
