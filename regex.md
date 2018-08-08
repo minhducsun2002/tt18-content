@@ -45,7 +45,7 @@ int main()
 
 Bài viết này sẽ diễn giải cụ thể các chức năng cơ bản nhất về biểu thức chính
 quy. Để đạt hiệu quả cao, bạn đọc có thể mở [regex101.com](https://regex101.com)
-để có thể hiểu đựoc các ví dụ một cách trực quan. Bạn đọc có thể vần dụng Google
+để có thể hiểu đựoc các ví dụ một cách trực quan. Bạn đọc có thể vận dụng Google
 để biết thêm về các chức năng khác.
 
 #### Tìm trực tiếp
@@ -78,7 +78,7 @@ Biểu thức trên sẽ tìm tất cả các xâu có kết thúc là `hello`
 #### Phép định lượng
 
 Đã có biểu thức thì có phép tính. Trong regex có phép đặc biệt, gọi là phép định
-luợng. Trong trường hợp tìm kiếm xâu có những ký tự chưa biết, chúng ta phải làm
+lượng. Trong trường hợp tìm kiếm xâu có những ký tự chưa biết, chúng ta phải làm
 thế nào? Sau đây là một số biểu thức giúp xử lý vấn đề này.
 
 |  Biểu thức   | Hành động                                                    |
