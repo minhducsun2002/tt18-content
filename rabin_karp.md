@@ -33,12 +33,12 @@ Full implementation: Github - [dungwinux/string-matching:RabinKarp.cpp@`master`]
 
 Khác với các thuật toán khác như KMP, Boyer-Moore chơi trò nhảy qua ký tự, Rabin-Karp "_cẩn thận_" so sánh các xâu con của _target_ với _pattern_ bằng hàm hash như sau:
 
-<img src="./img/rkarp-1.svg" height=30px>
+<img src="./img/rkarp-0.svg" height=30px>
 
 ##### Code C++
 
 ```cpp
-unsigned hash (const std::string &str)
+unsigned hash (const std::string &str, const int cnst)
 {
     long long sum = 0;
     for (auto &iter : str)
