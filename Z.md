@@ -128,6 +128,7 @@ Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
  
   Z:    " X  1  0  0  1  0  1  0  3  1  0  0 "
 ```
+Nhận xét: Giá trị các phần tử của `Z` sẽ không vượt quá `m`, vì ta chắc chắn không có giá trị nào giống `$`, nên sẽ không có xâu con nào có độ dài lớn hơn `m` và cũng là tiền tố của `S`.
 
 Từ đây ta dễ dàng thấy được, các giá trị `Z[i]` có giá trị bằng `m` chứng tỏ xuất hiện xâu `P` tại vị trí `i`, và từ đó có thể tính được các vị trí xuất hiện của xâu `P` trong xâu `T`.
 
@@ -199,3 +200,9 @@ int main() //Nhập p và t
     findpattern(P, T);
 }
 ```
+
+## Tham khảo
+
+1. https://www.hackerearth.com/practice/algorithms/string-algorithm/z-algorithm/tutorial/
+
+2. http://iq.opengenus.org/z-algorithm-function/
