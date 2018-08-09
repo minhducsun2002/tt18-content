@@ -150,9 +150,13 @@ mã hash
 
 <img src="./img/rkarp-ref-2.svg" width=120px>
 
-3. Github - [dungwinux/string-matching](https://github.com/dungwinux/string-matching)
+3. Github - [OpenGenus/cosmos:code/string_algorithms/src/rabin_karp_algorithm@`master`](https://github.com/OpenGenus/cosmos/tree/master/code/string_algorithms/src/rabin_karp_algorithm)
 
 <img src="./img/rkarp-ref-3.svg" width=120px>
+
+4. Github - [dungwinux/string-matching](https://github.com/dungwinux/string-matching)
+
+<img src="./img/rkarp-ref-4.svg" width=120px>
 
 ## Bài tập
 
