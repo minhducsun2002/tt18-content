@@ -17,7 +17,7 @@
 
 - Github - [n2yen/KMP](https://github.com/n2yen/KMP)
 
-<img src="./img/kmp-ref-2.svg" width=120px>
+<!-- <img src="./img/kmp-ref-2.svg" width=120px> -->
 
 ## Tài nguyên tham khảo
 
