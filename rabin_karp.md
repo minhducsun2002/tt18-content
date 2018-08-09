@@ -122,7 +122,7 @@ Chúng ta làm tiếp tục như vậy cho đến khi đạt được vị trí 
 
 => Tìm thấy kết quả
 
-### Kết
+## Kết
 
 Pros: 
 - Truờng hợp tốt: O(_n + m_)
@@ -140,7 +140,7 @@ mã hash
 - Tuy độ phức tạp thấp nhưng Rabin-Karp vẫn chưa phải là thuật nhanh nhất
 (còn có Boyer-Moore, KMP, ...)
 
-### Tham khảo
+## Tham khảo
 
 1. https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
 
@@ -154,7 +154,7 @@ mã hash
 
 <img src="./img/rkarp-ref-3.svg" width=120px>
 
-### Bài tập
+## Bài tập
 
 - Codeforces 1016B
 - Codeforces 271D
