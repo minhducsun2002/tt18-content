@@ -44,6 +44,8 @@ unsigned hash (const std::string &str, const int cnst)
     for (auto &iter : str)
     {
         sum = sum * cnst + iter;
+        
+        // Chống tràn số
         sum %= mod;
     }
     return sum;
