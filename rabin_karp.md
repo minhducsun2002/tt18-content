@@ -148,7 +148,7 @@ mã hash
 
 <img src="./img/rkarp-ref-2.svg" width=120px>
 
-1. Github - [dungwinux/string-matching](https://github.com/dungwinux/string-matching)
+3. Github - [dungwinux/string-matching](https://github.com/dungwinux/string-matching)
 
 <img src="./img/rkarp-ref-3.svg" width=120px>
 
@@ -156,5 +156,3 @@ mã hash
 
 - Codeforces 1016B
 - Codeforces 271D
-
-...
