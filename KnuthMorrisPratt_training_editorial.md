@@ -1,4 +1,5 @@
 ### Hướng dẫn giải một số bài tập
+
 - http://acm.timus.ru/problem.aspx?space=1&num=1423&locale=en
   - Dễ thấy nếu chuỗi `T` là chuỗi `S` sau khi xoay vòng một số lần, thì việc ghép 2 chuỗi `T` lại với nhau
 luôn luôn cho ra kết quả là một chuỗi chứa `S` (nếu không, in ra `-1`, bởi lẽ điều này luôn đúng). Ta chỉ
