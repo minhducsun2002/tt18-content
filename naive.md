@@ -52,11 +52,11 @@ _n - m + 1_ chuỗi con với độ dài là `m` -> so sánh _n - m + 1_ chuỗi
 Phương pháp này có độ phức tạp tính toán là O(_(n - m + 1) * m_), vốn không tối
 ưu, đặc biệt khi nhiều phép so sánh là không cần thiết.
 
-## Ứng dụng
+### Ứng dụng
 
 - Được sử dụng trong một số trình chấm.
 
-## Kết
+### Kết
 
 Pros:
 - Không có tiền xử lí (Preprocessing), không sử dụng bộ nhớ
