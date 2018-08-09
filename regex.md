@@ -81,13 +81,13 @@ Biểu thức trên sẽ tìm tất cả các xâu có kết thúc là `hello`
 lượng. Trong trường hợp tìm kiếm xâu có những ký tự chưa biết, chúng ta phải làm
 thế nào? Sau đây là một số biểu thức giúp xử lý vấn đề này.
 
-|  Biểu thức   | Hành động                                                    |
+| Biểu thức    | Hành động                                                    |
 | :----------: | :----------------------------------------------------------- |
-|    `zxc*`    | Tìm xâu có chứa `zx` và theo sau là **0 hoặc nhiều ký tự c** |
-|    `zxc+`    | Tìm xâu có chứa `zx` và theo sau là **1 hoặc nhiều ký tự c** |
-|    `zxc?`    | Tìm xâu có chứa `zx` và theo sau là **0 hoặc 1 ký tự c**     |
-|   `qwe{3}`   | Tìm xâu có chứa `qw` và theo sau là **3 ký tự e**            |
-|  `qwe{2,}`   | Tìm xâu có chứa `qw` và theo sau là **2 hoặc >= 2 ký tự e**  |
+| `zxc*`       | Tìm xâu có chứa `zx` và theo sau là **0 hoặc nhiều ký tự c** |
+| `zxc+`       | Tìm xâu có chứa `zx` và theo sau là **1 hoặc nhiều ký tự c** |
+| `zxc?`       | Tìm xâu có chứa `zx` và theo sau là **0 hoặc 1 ký tự c**     |
+| `qwe{3}`     | Tìm xâu có chứa `qw` và theo sau là **3 ký tự e**            |
+| `qwe{2,}`    | Tìm xâu có chứa `qw` và theo sau là **2 hoặc >= 2 ký tự e**  |
 | `a(bc){4,7}` | Tìm xâu có chứa `a` và theo sau là **4 đến 7 lần cụm `bc`**  |
 
 > **Chú ý**: `*`, `+` và `{}` là các phép tham lam, tức chúng sẽ tìm xâu dài nhất
@@ -98,13 +98,13 @@ thế nào? Sau đây là một số biểu thức giúp xử lý vấn đề n�
 Đây là một biểu thức đặc biệt, dùng để định nghĩa khoảng cho một hoặc nhiều ký
 tự, sau đây là ví dụ:
 
-|   Biểu thức   | Hành động                                          |
+| Biểu thức     | Hành động                                          |
 | :-----------: | :------------------------------------------------- |
-|    `[abc]`    | Tìm xâu có chứa hoặc a, hoặc b, hoặc c             |
-|    `[a-c]`    | Tuơng tự                                           |
+| `[abc]`       | Tìm xâu có chứa hoặc a, hoặc b, hoặc c             |
+| `[a-c]`       | Tuơng tự                                           |
 | `[a-fA-F0-9]` | Tìm xâu thể hiện số thập lục phân                  |
-|   `[0-9]%`    | Tìm xâu có chữ số trước ký thự `%`                 |
-|  `[^a-zA-Z]`  | Tìm xâu không có chứa ký tự chữ cái 'A-Z' và 'a-z' |
+| `[0-9]%`      | Tìm xâu có chữ số trước ký thự `%`                 |
+| `[^a-zA-Z]`   | Tìm xâu không có chứa ký tự chữ cái 'A-Z' và 'a-z' |
 
 ### Ứng dụng
 
@@ -129,13 +129,22 @@ Cons:
 ### Tham khảo
 
 1. https://en.wikipedia.org/wiki/Regular_expression
+
+<img src="./img/regex-ref-1.svg" width=120px>
+
 2. https://en.cppreference.com/w/cpp/regex
+
+<img src="./img/regex-ref-2.svg" width=120px>
+
 3. https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
-4. https://github.com/42tm/wfind
+
+<img src="./img/regex-ref-3.svg" width=120px>
+
+4. Github - [42tm/wfind](https://github.com/42tm/wfind)
 
 ### Bài tập
 
-- https://codeforces.com/problemset/problem/320/A
-- https://codeforces.com/problemset/problem/58/A
-- https://codeforces.com/problemset/problem/96/A
+- Codeforces - 3320A
+- Codeforces - 58A
+- Codeforces - 96A
 - https://www.hackerrank.com/domains/regex
