@@ -7,7 +7,7 @@
 
 ## Một số đoạn code mẫu
 
-- Github - [OpenGenus/cosmos:code/string_algorithms/src/kmp_algorithm/kmp_algorithm.cpp@`master`](https://github.com/OpenGenus/cosmos/blob/master/code/string_algorithms/src/kmp_algorithm/kmp_algorithm.cpp)
+- Github - [OpenGenus/cosmos:code/string_algorithms/src/kmp_algorithm@`master`](https://github.com/OpenGenus/cosmos/tree/master/code/string_algorithms/src/kmp_algorithm)
 
 <img src="./img/kmp-ref-0.svg" width=120px>
 
