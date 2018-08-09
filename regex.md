@@ -120,10 +120,10 @@ https://en.cppreference.com/w/cpp/regex.
 Pros:
 - Tìm kiếm chuyên sâu và thông minh, đăc biệt với những pattern phức tạp.
 - Nhiều ngôn ngữ như C++, Python, JavaScript, Crystal, ... có thư viện hỗ trợ sẵn,
-lập trình viên  chỉ việc gọi ra.
+lập trình viên chỉ việc gọi ra.
 
 Cons:
-- Khó đọc và viết, -> khó sửa và gỡ lỗi code.
+- Khó đọc và viết -> khó sửa và gỡ lỗi code.
 - Ảnh hưởng ít nhiều tới hiệu năng và làm chậm chuơng trình.
 
 ### Tham khảo
@@ -132,3 +132,10 @@ Cons:
 2. https://en.cppreference.com/w/cpp/regex
 3. https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
 4. https://github.com/42tm/wfind
+
+### Bài tập
+
+- https://codeforces.com/problemset/problem/320/A
+- https://codeforces.com/problemset/problem/58/A
+- https://codeforces.com/problemset/problem/96/A
+- https://www.hackerrank.com/domains/regex
