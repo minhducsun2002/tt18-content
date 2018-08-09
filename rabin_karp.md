@@ -137,8 +137,15 @@ mã hash
 (còn có Boyer-Moore, KMP, ...)
 
 ### Tham khảo
+
 1. https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
+
+<img src="./img/rkarp-ref-1.svg" width=100px>
+
 2. http://www-igm.univ-mlv.fr/~lecroq/string/node5.html
+
+<img src="./img/rkarp-ref-2.svg" width=100px>
+
 3. https://github.com/dungwinux/string-matching
 
 ### Bài tập
