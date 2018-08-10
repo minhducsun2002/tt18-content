@@ -16,7 +16,9 @@ O(_n + m_), còn trường hợp xấu nhất là O(_nm_).
 
 ### Implementation
 
-Full implementation: https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp
+Full implementation: Github - [dungwinux/string-matching:RabinKarp.cpp@`master`](https://github.com/dungwinux/string-matching/blob/master/RabinKarp.cpp)
+
+<img src="./img/rkarp-ref-0.svg" width=120px>
 
 > Để thuận tiện, người viết sẽ sử dụng các tên biến đựoc viết trong đoạn code 
 > ở trên:
@@ -31,17 +33,19 @@ Full implementation: https://github.com/dungwinux/string-matching/blob/master/Ra
 
 Khác với các thuật toán khác như KMP, Boyer-Moore chơi trò nhảy qua ký tự, Rabin-Karp "_cẩn thận_" so sánh các xâu con của _target_ với _pattern_ bằng hàm hash như sau:
 
-![Caculating Hash](/img/rkarp-1.svg)
+<img src="./img/rkarp-0.svg" height=30px>
 
-##### Code C++
+#### Code C++
 
 ```cpp
-unsigned hash (const std::string &str)
+unsigned hash (const std::string &str, const int cnst)
 {
     long long sum = 0;
     for (auto &iter : str)
     {
         sum = sum * cnst + iter;
+        
+        // Chống tràn số
         sum %= mod;
     }
     return sum;
@@ -137,12 +141,24 @@ mã hash
 (còn có Boyer-Moore, KMP, ...)
 
 ### Tham khảo
+
 1. https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
+
+<img src="./img/rkarp-ref-1.svg" width=120px>
+
 2. http://www-igm.univ-mlv.fr/~lecroq/string/node5.html
-3. https://github.com/dungwinux/string-matching
+
+<img src="./img/rkarp-ref-2.svg" width=120px>
+
+3. Github - [OpenGenus/cosmos:code/string_algorithms/src/rabin_karp_algorithm@`master`](https://github.com/OpenGenus/cosmos/tree/master/code/string_algorithms/src/rabin_karp_algorithm)
+
+<img src="./img/rkarp-ref-3.svg" width=120px>
+
+4. Github - [dungwinux/string-matching](https://github.com/dungwinux/string-matching)
+
+<!-- <img src="./img/rkarp-ref-4.svg" width=120px> -->
 
 ### Bài tập
-- https://codeforces.com/contest/1016/problem/B
-- https://codeforces.com/contest/271/problem/D
 
-...
+- Codeforces 1016B
+- Codeforces 271D
