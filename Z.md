@@ -1,18 +1,20 @@
-# Thuật Toán Z
+# String Matching
 
-## Giới thiệu
+## Thuật Toán Z
+
+### Giới thiệu
 
 Thuật toán Z (Z algorithm) là thuật toán so khớp xâu, tương tự như KMP, với thời gian tuyến tính `O(m+n)`, với `n`, `m` là độ dài xâu văn bản và xâu mẫu.
 
-## Đề bài
+### Đề bài
 
 Ta sẽ lấy đề bài tương tự phần KMP, cho xâu văn bản `T` và xâu mẫu `P`, ta cần tính số lần xâu `P` xuất hiện trong `T`.
 
 Trước hết, để hiểu thuật toán này, ta sẽ làm quen với mảng `Z`.
 
-## Mảng Z
+### Mảng Z
 
-### Khái niệm
+#### Khái niệm
 
 Mảng `Z` của một xâu `str` là mảng có cùng độ dài với xâu, với `Z[i]` là độ dài xâu con dài nhất của `str` bắt đầu tại `i`, và cũng là tiền tố của `str`.
 
@@ -30,7 +32,7 @@ Vị trí: " 0  1  2  3  4  5  6  7  8  9  10 11"
   => Z = {X,1,0,0,3,1,0,0,2,2,1,0}
 ```
 
-### Cách lập
+#### Cách lập
 
 Ta có thể lập mảng `Z` với thời gian tuyến tính như sau:
 
@@ -57,7 +59,7 @@ Từ đó ta có thể chạy biến i từ đầu đến cuối xâu như sau:
      từ đó ta tính r như trên, bỏ qua đoạn từ i đến r,
      xong lấy Z[i] = r-l+1 như bình thường
 
-### Code tham khảo:
+#### Code tham khảo:
 
 ```cpp
 string str;
@@ -106,7 +108,7 @@ void getZ()
 
 Vậy ta sử dụng mảng `Z` để giải bài toán trên như thế nào?
 
-## Áp dụng
+### Áp dụng
 
 Gọi độ dài xâu `T` là `n`, độ dài xâu `P` là m.
 
@@ -205,12 +207,12 @@ int main() //Nhập p và t
 }
 ```
 
-## Tham khảo
+### Tham khảo
 
 1. https://www.hackerearth.com/practice/algorithms/string-algorithm/z-algorithm/tutorial/
 
 <img src="./img/Z-ref-1.svg" width=120px>
 
-2. http://iq.opengenus.org/z-algorithm-function/
+2. https://iq.opengenus.org/z-algorithm-function/
 
 <img src="./img/Z-ref-2.svg" width=120px>
