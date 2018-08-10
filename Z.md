@@ -205,4 +205,8 @@ int main() //Nhập p và t
 
 1. https://www.hackerearth.com/practice/algorithms/string-algorithm/z-algorithm/tutorial/
 
+<img src="./img/Z-ref-1.svg" width=120px>
+
 2. http://iq.opengenus.org/z-algorithm-function/
+
+<img src="./img/Z-ref-2.svg" width=120px>
