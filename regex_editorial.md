@@ -22,7 +22,7 @@ Có 2 hướng giải cho bài này :
 
   Đó là ý tưởng chính để giải bài này.
 
-### Codeforces 96A
+#### Codeforces 96A
 
 Nếu chuỗi nhập vào chứa ít nhất 7 ký tự `0` hoặc `1` đứng cạnh nhau thì in ra `YES`.
 Đây chính là điểm mấu chốt, vì chúng ta chỉ cần ghép 7 ký tự liền nhau.

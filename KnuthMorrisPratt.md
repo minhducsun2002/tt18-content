@@ -1,7 +1,9 @@
-# Thuật toán Knuth-Morris-Pratt
+# String Matching
 
-Một trong những thuật toán tìm kiếm chuỗi tối ưu nhất 
----
+## Thuật toán Knuth-Morris-Pratt
+
+### Một trong những thuật toán tìm kiếm chuỗi tối ưu nhất 
+
 Bài toán tìm kiếm (so khớp) chuỗi, hay còn gọi là bài toán needle-in-haystack
 (cây kim trong đống rơm), là bài toán mà trong đó chúng ta được cho một văn bản
 (tạm ký hiệu dưới dạng một chuỗi T), và một chuỗi mẫu (pattern, tạm ký hiệu là
@@ -27,6 +29,7 @@ thông qua so sánh
 - ký hiệu `-` giữa 2 ký tự chỉ ra rằng 2 ký tự đó đang được so sánh
 - ký hiệu `×` giữa 2 ký tự chỉ ra rằng 2 ký tự đó không khớp nhau
 ---
+
 ### Đề
 
 Trước tiên, chúng ta có thuật toán khá là trâu bò như sau:
@@ -276,11 +279,11 @@ Xét mẫu khớp `ABCDABD`.
 
 Gọi `length` là giá trị `N(i)` tương ứng hiện tại, với `i` là độ dài tiền tố đang xét của `ABCDABD`.
 
-|`length`|`0`| | | | |   |  |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|`i`|`0`| | | | | | |
-| |`A`|`B`|`C`|`D`|`A`|`B`|`D`|
-|`N(i)`| | | | | | | |
+| `length` | `0`   |       |       |       |       |       |       |
+| :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `i`      | `0`   |       |       |       |       |       |       |
+|          | `A`   | `B`   | `C`   | `D`   | `A`   | `B`   | `D`   |
+| `N(i)`   |       |       |       |       |       |       |       |
 
 Với `i = 0`, dĩ nhiên không tồn tại tiền tố chuẩn nào có độ dài nhỏ hơn `1` mà lớn hơn `0`, do đó `N(0) = 0`.
 
