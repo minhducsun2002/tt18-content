@@ -1,19 +1,26 @@
-## Một số bài tập áp dụng :
-http://codeforces.com/contest/432/problem/D
+## Một số bài tập áp dụng
 
-http://codeforces.com/contest/126/problem/B
+- Codeforces - 432D
+- Codeforces - 126B
+- Codeforces - 625B
+- Timus - 1423
 
-http://acm.timus.ru/problem.aspx?space=1&num=1423&locale=en
+## Một số đoạn code mẫu
 
-http://codeforces.com/contest/625/problem/B
+- Github - [OpenGenus/cosmos:code/string_algorithms/src/kmp_algorithm@`master`](https://github.com/OpenGenus/cosmos/tree/master/code/string_algorithms/src/kmp_algorithm)
 
-## Một số đoạn code mẫu :
-https://github.com/OpenGenus/cosmos/blob/master/code/string_algorithms/src/kmp_algorithm/kmp_algorithm.cpp
+<img src="./img/kmp-ref-0.svg" width=120px>
 
-https://github.com/minhducsun2002/Algorithms-Implementations/blob/master/String/String%20Matching/KnuthMorrisPratt.cpp
-(code của người viết)
+- Github - [minhducsun2002/Algorithms-Implementations:String/String%20Matching/KnuthMorrisPratt.cpp@`master`](https://github.com/minhducsun2002/Algorithms-Implementations/blob/master/String/String%20Matching/KnuthMorrisPratt.cpp)
 
-https://github.com/n2yen/KMP
+<img src="./img/kmp-ref-1.svg" width=120px>
 
-## Tài nguyên tham khảo :
-http://whocouldthat.be/visualizing-string-matching/
+- Github - [n2yen/KMP](https://github.com/n2yen/KMP)
+
+<!-- <img src="./img/kmp-ref-2.svg" width=120px> -->
+
+## Tài nguyên tham khảo
+
+1. http://whocouldthat.be/visualizing-string-matching/
+
+<img src="./img/kmp-ref-3.svg" width=120px>
