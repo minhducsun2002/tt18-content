@@ -36,8 +36,10 @@ Dễ thấy, có 2 cách giải :
 
   Code mẫu :
 
-  http://codeforces.com/contest/96/submission/38828432
+  https://codeforces.com/contest/96/submission/38828432
   (sử dụng `std::string::find`, hàm trâu bò có sẵn)
+
+  <img src="./img/regex-e-0.svg" width=120px>
 
 - Dùng regular expression.
 
@@ -50,6 +52,10 @@ Dễ thấy, có 2 cách giải :
 
   Code mẫu :
 
-  http://codeforces.com/contest/96/submission/41415196 (sử dụng `std::regex_match`),
+  https://codeforces.com/contest/96/submission/41415196 (sử dụng `std::regex_match`)
 
-  http://codeforces.com/contest/96/submission/41415353 (sử dụng `std::regex_search`).
+  <img src="./img/regex-e-1.svg" width=120px>
+
+  https://codeforces.com/contest/96/submission/41415353 (sử dụng `std::regex_search`)
+
+  <img src="./img/regex-e-2.svg" width=120px>
