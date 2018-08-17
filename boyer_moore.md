@@ -21,7 +21,6 @@ hợp chúng với `std::search` trong thư viện `<algorithm>` để có đư�
 String-Matching hoàn chỉnh.
 
 ```c++
-
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -43,8 +42,12 @@ int main()
 }
 ```
 
-### Tham khảo
+### Ứng dụng
 
+- Được sử dụng trong các trình chỉnh sữa văn bản (_text editor_) để tìm kiếm xâu.
+- Là thuật toán được sử dụng trong _GNU's grep_
+
+### Tham khảo
 
 1. https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
 2. https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore%E2%80%93Horspool_algorithm
